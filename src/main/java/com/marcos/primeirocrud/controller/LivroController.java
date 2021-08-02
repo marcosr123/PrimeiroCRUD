@@ -38,7 +38,7 @@ public class LivroController {
     //DELETE
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deletaLivro(@PathVariable Long id){
+    public void deletaLivro(@PathVariable Integer id){
         livroService.deletaLivro(id);
     }
 

@@ -38,7 +38,7 @@ public class LivroService {
 
     //DELETE
     @Transactional
-    public void deletaLivro(Long id){
+    public void deletaLivro(Integer id){
         livroRepository.deleteById(id);
     }
 
@@ -52,7 +52,7 @@ public class LivroService {
     }
 
     private boolean verificaLivro(Livro livro){
-        Long id = livro.getId();
+        Integer id = livro.getId();
         String descricao = livro.getDescricao();
         if (livroRepository.findByDescricaoContainingIgnoreCase(descricao).isEmpty()) {
             if (livroRepository.findById(id).isPresent()) {
